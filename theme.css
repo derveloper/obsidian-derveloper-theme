@@ -579,9 +579,9 @@ button.mod-cta:hover {
 	/* Print-specific adjustments for MCL Multi-Column */
 	/* MCL uses flexbox, so we preserve that and just add print optimizations */
 	
-	/* Ensure proper page settings */
+	/* Ensure proper page settings - auto allows both portrait and landscape */
 	@page {
-		size: A4;
+		size: auto;
 		margin: 20mm;
 	}
 
