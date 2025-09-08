@@ -1,16 +1,24 @@
-body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+/* Derveloper Theme - Based on Darkmoss, optimized for Deuteranomaly and Obsidian 1.9.12 */
+
+:root {
+	--default-font: "Segoe UI", "Arial", "Tahoma", "Helvetica", sans-serif;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
+/* Flat design - no rounded corners */
+body {
+	--radius-s: 4px;
+	--radius-m: 4px;
+	--radius-l: 4px;
+	--input-radius: 4px;
+	--tab-radius-active: 2px;
+	--checkbox-radius: 2px;
+	--toggle-radius: 2px;
+	--toggle-thumb-radius: 2px;
+	--slider-thumb-radius: 2px;
+}
+
+.workspace-tab-header.is-active::before,
+.workspace-tab-header.is-active::after {
 	display: none;
 }
 
@@ -31,4 +39,594 @@ svg * {
 
 .menu-separator {
 	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+}
+
+/* Dark theme colors - optimized for deuteranomaly - PRIVATE VAULT VARIANT */
+.theme-dark {
+	/* Background colors - middle ground between original and light */
+	--background-primary: #1a1f29;
+	--background-primary-alt: #171b23;
+	--background-secondary: #141821;
+	--background-secondary-alt: #11151c;
+	--background-accent: #080a0e;
+	--background-modifier-border: #485163;
+	--background-modifier-active-hover: hsl(224deg 23% 50% / 20%);
+	--background-modifier-form-field: rgba(10, 10, 10, 0.25);
+	--background-modifier-form-field-highlighted: rgba(10, 10, 10, 0.18);
+	--background-modifier-box-shadow: rgba(0, 0, 0, 0.25);
+	--background-modifier-success: #00d4aa; /* Teal instead of blue */
+	--background-modifier-error: #4a3f50; /* Dark purple-gray for warning buttons */
+	--background-modifier-error-rgb: 74, 63, 80;
+	--background-modifier-error-hover: #5a4f60;
+	--background-modifier-cover: rgba(0, 0, 0, 0.5);
+
+	/* Text colors - distinctly different, deuteranomaly friendly */
+	--text-accent: #ffa500; /* Orange for better contrast */
+	--text-accent-hover: #ffb733; /* Lighter orange on hover */
+	--text-normal: #f0e6ff;
+	--text-muted: #c8b8db;
+	--text-error: #ffa500; /* Amber instead of orange */
+	--text-error-hover: #ffb733;
+	--text-highlight-bg: rgba(138, 97, 255, 0.6); /* Purple highlight */
+	--text-selection: rgba(138, 97, 255, 0.25);
+	--text-on-accent: #ffffff;
+
+	/* Interactive colors */
+	--interactive-normal: #242937;
+	--interactive-hover: #383f50;
+	--interactive-accent: #8a61ff;
+	--interactive-accent-rgb: 138, 97, 255;
+	--interactive-accent-hover: #9d7aff;
+
+	/* Scrollbar */
+	--scrollbar-active-thumb-bg: rgba(255, 255, 255, 0.25);
+	--scrollbar-bg: rgba(255, 255, 255, 0.08);
+	--scrollbar-thumb-bg: rgba(255, 255, 255, 0.15);
+	--panel-border-color: #1a1d24;
+
+	/* Custom color palette - deuteranomaly optimized - PRIVATE VARIANT */
+	--gray-1: #6a7180;
+	--blue: #7ac3ff;
+	--orange: #ffb347;
+	--yellow: #ffe066;
+	--cyan: #4ddddd;
+	--magenta: #ff66d9;
+	--violet: #b399ff;
+	--light-blue: #66c4e5;
+
+	/* Heading colors - deuteranomaly friendly - HIGH CONTRAST */
+	--text-title-h1: #c8a6ff; /* Bright violet - primary */
+	--text-title-h2: #8a61ff; /* Strong purple - main working heading */
+	--text-title-h3: #00e5ff; /* Bright cyan - stark contrast */
+	--text-title-h4: #ffea00; /* Pure yellow - very distinctive */
+	--text-title-h5: #ff6ec7; /* Hot pink - stands out */
+	--text-title-h6: #40e0d0; /* Turquoise - different from cyan */
+
+	/* Typography */
+	--font-weight-title: 600;
+	--font-monospace:
+		"Consolas", "Fira Code", "Source Code Pro", "Droid Sans Mono", "Monoid",
+		"Arial", sans-serif;
+	--line-height-headers: 1;
+	--file-line-width: 1000px;
+
+	/* Search highlights */
+	--search-match-color: #ffff00;
+	--search-other-match-color: #ff9632;
+}
+
+/* Search results */
+.search-result-file-matched-text {
+	color: #0d1117;
+	background-color: #ffff00;
+	box-shadow: none;
+}
+
+.markdown-rendered .search-highlight > div {
+	opacity: 1;
+	box-shadow: 0px 0.2em 0px 0 #ff9632;
+}
+
+.markdown-rendered .search-highlight > div.is-active {
+	box-shadow: 0px 0.2em 0px 0 var(--search-match-color);
+}
+
+.search-result-file-title {
+	color: var(--blue);
+}
+
+/* Headings in preview mode */
+.markdown-rendered h1 {
+	font-family: var(--font-family-preview);
+	font-weight: var(--font-weight-title);
+	color: var(--text-title-h1);
+	margin-top: 0px;
+	line-height: var(--line-height-headers);
+}
+
+.markdown-rendered h2 {
+	font-family: var(--font-family-preview);
+	font-weight: var(--font-weight-title);
+	color: var(--text-title-h2);
+	line-height: var(--line-height-headers);
+}
+
+.markdown-rendered h3 {
+	font-family: var(--font-family-preview);
+	font-weight: var(--font-weight-title);
+	color: var(--text-title-h3);
+	line-height: var(--line-height-headers);
+}
+
+.markdown-rendered h4 {
+	font-family: var(--font-family-preview);
+	font-weight: var(--font-weight-title);
+	color: var(--text-title-h4);
+	line-height: var(--line-height-headers);
+}
+
+.markdown-rendered h5 {
+	font-family: var(--font-family-preview);
+	font-weight: var(--font-weight-title);
+	color: var(--text-title-h5);
+	line-height: var(--line-height-headers);
+}
+
+.markdown-rendered h6 {
+	font-family: var(--font-family-preview);
+	font-weight: var(--font-weight-title);
+	color: var(--text-title-h6);
+	line-height: var(--line-height-headers);
+}
+
+/* Headings in editor mode (Live Preview) */
+.HyperMD-header-1,
+.cm-header-1 {
+	font-family: var(--font-family-editor);
+	font-weight: var(--font-weight-title) !important;
+	color: var(--text-title-h1);
+	line-height: var(--line-height-headers);
+}
+
+.HyperMD-header-2,
+.cm-header-2 {
+	font-family: var(--font-family-editor);
+	font-weight: var(--font-weight-title) !important;
+	color: var(--text-title-h2);
+	line-height: var(--line-height-headers);
+}
+
+.HyperMD-header-3,
+.cm-header-3 {
+	font-family: var(--font-family-editor);
+	font-weight: var(--font-weight-title) !important;
+	color: var(--text-title-h3);
+	line-height: var(--line-height-headers);
+}
+
+.HyperMD-header-4,
+.cm-header-4 {
+	font-family: var(--font-family-editor);
+	font-weight: var(--font-weight-title) !important;
+	color: var(--text-title-h4);
+	line-height: var(--line-height-headers);
+}
+
+.HyperMD-header-5,
+.cm-header-5 {
+	font-family: var(--font-family-editor);
+	font-weight: var(--font-weight-title) !important;
+	color: var(--text-title-h5);
+	line-height: var(--line-height-headers);
+}
+
+.HyperMD-header-6,
+.cm-header-6 {
+	font-family: var(--font-family-editor);
+	font-weight: var(--font-weight-title) !important;
+	color: var(--text-title-h6);
+	line-height: var(--line-height-headers);
+}
+
+/* Links */
+a,
+.markdown-rendered .internal-link {
+	text-decoration: none;
+}
+
+a:hover,
+.markdown-rendered .internal-link:hover {
+	text-decoration: underline;
+}
+
+/* Status bar */
+.status-bar,
+.side-dock.mod-right,
+.side-dock.mod-left {
+	border-color: var(--panel-border-color);
+	border-width: 1px;
+}
+
+.status-bar {
+	--bar-vertical-padding: 4px;
+	--bar-height: calc(22px + (var(--bar-vertical-padding) * 2));
+	line-height: 20px;
+	padding: 0 20px;
+	height: var(--bar-height);
+	max-height: var(--bar-height);
+	min-height: var(--bar-height);
+	overflow: hidden;
+}
+
+.status-bar-item {
+	margin: auto 0;
+}
+
+.status-bar-item > * {
+	padding-top: var(--bar-vertical-padding) !important;
+	padding-bottom: var(--bar-vertical-padding) !important;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	overflow: hidden;
+}
+
+code[class*="language-"] {
+	display: block;
+	padding: 0em;
+	overflow: auto;
+}
+
+.markdown-rendered pre {
+	padding: 12px 12px;
+}
+
+/* Width of content */
+.markdown-source-view.mod-cm6.is-readable-line-width:not(.is-rtl)
+	.cm-contentContainer {
+	max-width: 1000px;
+}
+
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width .cm-content {
+	max-width: 1000px;
+}
+
+.markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width
+	.cm-line:not(.HyperMD-table-row) {
+	max-width: 1000px;
+}
+
+.markdown-rendered.is-readable-line-width .markdown-preview-sizer {
+	max-width: 1000px;
+}
+
+/* Tags - purple for private vault distinction */
+a.tag,
+.cm-hashtag {
+	color: #b399ff;
+}
+
+.cm-hashtag {
+	text-decoration: underline;
+}
+
+/* Blockquotes - teal for private vault */
+.markdown-rendered blockquote {
+	border: solid #00d4aa;
+	border-width: 0px 0px 0px 3px;
+	color: #00d4aa;
+	font-style: italic;
+}
+
+.cm-quote {
+	color: #00d4aa;
+	font-style: italic;
+}
+
+.HyperMD-quote {
+	border: solid #00d4aa;
+	border-width: 0px 0px 0px 3px;
+	background-color: var(--background-primary);
+}
+
+/* Inline code - sky blue for distinction */
+.cm-inline-code,
+code {
+	color: #66c4e5;
+}
+
+.cm-formatting-link {
+	color: #66c4e5;
+}
+
+/* Line height */
+.cm-line {
+	line-height: 1.5em;
+}
+
+.HyperMD-codeblock {
+	line-height: 1.4;
+}
+
+/* File explorer - lighter for private vault */
+.nav-file-title,
+.nav-folder-title {
+	color: #9099a8;
+}
+
+/* Bold text - slight purple tint for private vault */
+.cm-strong,
+strong {
+	font-weight: 600 !important;
+	color: #f8f0ff;
+}
+
+/* Footnotes */
+.footnotes p {
+	margin: 0;
+}
+
+.frontmatter-container .tag,
+.frontmatter-container .frontmatter-alias {
+	margin: 0;
+}
+
+/* Code in preview */
+.markdown-rendered code {
+	color: #66c4e5;
+}
+
+/* File explorer hover - purple for private vault */
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover {
+	outline: 1px solid #b399ff;
+}
+
+body:not(.is-grabbing) .nav-file-title.is-selected:hover {
+	background-color: var(--nav-item-background-active);
+}
+
+/* Hide attachments folder */
+div[data-path="0attachments"],
+div[data-path="0attachments"] + div.nav-folder-children {
+	display: none;
+}
+
+/* Selected file */
+.nav-file-title.is-selected {
+	background-color: var(--nav-item-background-active);
+}
+
+/* Collapse icon - purple for private vault */
+.collapse-icon svg.svg-icon,
+.is-collapsed .collapse-icon svg.svg-icon {
+	color: #b399ff;
+}
+
+/* PDF Export Styles */
+@media print {
+	/* Force light theme colors for print - PRIVATE VAULT VARIANT */
+	.theme-dark,
+	body {
+		--background-primary: white;
+		--background-secondary: white;
+		--text-normal: #222;
+		--text-muted: #555;
+		/* Heading colors for print - deuteranomaly friendly - HIGH CONTRAST */
+		--text-title-h1: #7e57c2 !important; /* Deep violet */
+		--text-title-h2: #5e35b1 !important; /* Strong purple */
+		--text-title-h3: #0097a7 !important; /* Strong cyan */
+		--text-title-h4: #f9a825 !important; /* Bold yellow */
+		--text-title-h5: #e91e63 !important; /* Pink */
+		--text-title-h6: #00897b !important; /* Teal */
+		font-size: 12pt;
+	}
+
+	/* Page breaks - removed h1 page break */
+	h1 {
+		page-break-before: auto;
+		page-break-after: avoid;
+		margin-top: 0 !important;
+		padding-top: 0 !important;
+	}
+
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		page-break-after: avoid;
+	}
+
+	pre,
+	blockquote {
+		page-break-inside: avoid;
+	}
+
+	/* Remove UI elements */
+	.nav-folder,
+	.nav-file,
+	.status-bar,
+	.workspace-ribbon,
+	.workspace-tab-header-container {
+		display: none !important;
+	}
+
+	/* Code blocks in print - PRIVATE VAULT */
+	code,
+	.cm-inline-code {
+		color: #0277bd !important; /* Ocean blue for code */
+		background-color: #f3f5f7 !important;
+	}
+
+	/* Links in print - PRIVATE VAULT */
+	a {
+		color: #0277bd; /* Bright blue for links */
+		text-decoration: underline;
+	}
+
+	/* Blockquotes in print - PRIVATE VAULT */
+	blockquote {
+		border-left: 3px solid #00897b !important; /* Teal border */
+		color: #444 !important;
+		background-color: rgba(0, 137, 123, 0.05) !important;
+		padding-left: 1em !important;
+	}
+
+	/* Override base text colors */
+	.markdown-rendered {
+		color: #222 !important;
+	}
+
+	/* Headings use their custom colors */
+	.markdown-rendered h1 {
+		color: var(--text-title-h1) !important;
+	}
+	.markdown-rendered h2 {
+		color: var(--text-title-h2) !important;
+	}
+	.markdown-rendered h3 {
+		color: var(--text-title-h3) !important;
+	}
+	.markdown-rendered h4 {
+		color: var(--text-title-h4) !important;
+	}
+	.markdown-rendered h5 {
+		color: var(--text-title-h5) !important;
+	}
+	.markdown-rendered h6 {
+		color: var(--text-title-h6) !important;
+	}
+
+	/* Fix bold text */
+	strong,
+	.cm-strong {
+		color: #000 !important; /* Black for emphasis */
+		font-weight: bold !important;
+	}
+
+	/* Fix page layout */
+	.print .markdown-preview-view {
+		padding: 0 !important;
+	}
+
+	/* Remove extra margins */
+	.markdown-rendered > :first-child {
+		margin-top: 0 !important;
+	}
+
+/* Button text fixes for better readability */
+.modal button,
+.button-default,
+button.mod-cta,
+button.mod-warning {
+	color: #ffffff !important;
+	font-weight: 500;
+	transition: all 0.2s ease;
+}
+
+/* Override mod-warning button text color for better readability */
+button.mod-warning {
+	--text-color: #d4c4e0 !important; /* Light purple-gray text */
+}
+
+button.mod-warning:hover {
+	background-color: var(--background-modifier-error-hover) !important;
+}
+
+/* Primary CTA buttons - softer purple with better contrast */
+button.mod-cta {
+	background: linear-gradient(135deg, #6b52b3, #5a439d) !important;
+	color: #e8e0ff !important; /* Slightly less bright white */
+	border: 1px solid rgba(107, 82, 179, 0.3) !important;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+	font-weight: 500 !important;
+}
+
+button.mod-cta:hover {
+	background: linear-gradient(135deg, #7a5fc4, #6b52b3) !important;
+	color: #f0e9ff !important;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) !important;
+}
+
+	/* Tags in print - PRIVATE VAULT */
+	a.tag {
+		color: #6a3fb5 !important;
+		background-color: rgba(106, 63, 181, 0.1) !important;
+		padding: 2px 6px !important;
+		border-radius: 3px !important;
+	}
+
+	/* Lists */
+	ul,
+	ol {
+		color: #222 !important;
+	}
+
+	/* Tables */
+	table {
+		border-color: #ddd !important;
+	}
+	th {
+		background-color: #f5f5f5 !important;
+		color: #222 !important;
+	}
+	td {
+		color: #222 !important;
+	}
+
+	/* Print-specific adjustments for MCL Multi-Column */
+	/* MCL uses flexbox, so we preserve that and just add print optimizations */
+	
+	/* Ensure proper page settings */
+	@page {
+		size: A4;
+		margin: 20mm;
+	}
+
+	/* Preserve MCL flexbox layout in print */
+	div[data-callout="multi-column"].callout {
+		page-break-inside: avoid !important;
+	}
+
+	/* Prevent breaks inside nested callouts */
+	div[data-callout="multi-column"].callout .callout {
+		break-inside: avoid !important;
+		page-break-inside: avoid !important;
+	}
+
+	/* Style nested callouts in print for better visibility */
+	div[data-callout="multi-column"].callout .callout {
+		border: 1px solid #ddd !important;
+		padding: 12px !important;
+		margin: 0 8px 20px 8px !important; /* More spacing between callouts */
+	}
+
+	/* Keep lists together in print */
+	div[data-callout="multi-column"].callout ul,
+	div[data-callout="multi-column"].callout ol {
+		break-inside: avoid !important;
+		page-break-inside: avoid !important;
+	}
+
+	/* Hide collapsible indicators in print */
+	.callout-fold {
+		display: none !important;
+	}
+
+	/* Fix H3 headers in multi-column callouts - keep them together */
+	div[data-callout="multi-column"] .callout-content h3 {
+		break-inside: avoid !important;
+		page-break-inside: avoid !important;
+		hyphens: none !important;
+		word-break: keep-all !important;
+	}
+	
+	/* Ensure all content in callouts is visible */
+	div[data-callout="multi-column"] .callout-content > * {
+		visibility: visible !important;
+		opacity: 1 !important;
+		display: block !important;
+	}
 }
