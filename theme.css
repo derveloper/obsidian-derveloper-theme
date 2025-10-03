@@ -108,7 +108,7 @@ svg * {
 		"Consolas", "Fira Code", "Source Code Pro", "Droid Sans Mono", "Monoid",
 		"Arial", sans-serif;
 	--line-height-headers: 1;
-	--file-line-width: 1000px;
+	--file-line-width: 1300px;
 
 	/* Search highlights */
 	--search-match-color: #ffff00;
@@ -285,20 +285,20 @@ code[class*="language-"] {
 /* Width of content */
 .markdown-source-view.mod-cm6.is-readable-line-width:not(.is-rtl)
 	.cm-contentContainer {
-	max-width: 1000px;
+	max-width: 1300px;
 }
 
 .markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width .cm-content {
-	max-width: 1000px;
+	max-width: 1300px;
 }
 
 .markdown-source-view.mod-cm6.is-line-wrap.is-readable-line-width
 	.cm-line:not(.HyperMD-table-row) {
-	max-width: 1000px;
+	max-width: 1300px;
 }
 
 .markdown-rendered.is-readable-line-width .markdown-preview-sizer {
-	max-width: 1000px;
+	max-width: 1300px;
 }
 
 /* Tags - purple for private vault distinction */
@@ -516,39 +516,39 @@ div[data-path="0attachments"] + div.nav-folder-children {
 		margin-top: 0 !important;
 	}
 
-/* Button text fixes for better readability */
-.modal button,
-.button-default,
-button.mod-cta,
-button.mod-warning {
-	color: #ffffff !important;
-	font-weight: 500;
-	transition: all 0.2s ease;
-}
+	/* Button text fixes for better readability */
+	.modal button,
+	.button-default,
+	button.mod-cta,
+	button.mod-warning {
+		color: #ffffff !important;
+		font-weight: 500;
+		transition: all 0.2s ease;
+	}
 
-/* Override mod-warning button text color for better readability */
-button.mod-warning {
-	--text-color: #d4c4e0 !important; /* Light purple-gray text */
-}
+	/* Override mod-warning button text color for better readability */
+	button.mod-warning {
+		--text-color: #d4c4e0 !important; /* Light purple-gray text */
+	}
 
-button.mod-warning:hover {
-	background-color: var(--background-modifier-error-hover) !important;
-}
+	button.mod-warning:hover {
+		background-color: var(--background-modifier-error-hover) !important;
+	}
 
-/* Primary CTA buttons - softer purple with better contrast */
-button.mod-cta {
-	background: linear-gradient(135deg, #6b52b3, #5a439d) !important;
-	color: #e8e0ff !important; /* Slightly less bright white */
-	border: 1px solid rgba(107, 82, 179, 0.3) !important;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
-	font-weight: 500 !important;
-}
+	/* Primary CTA buttons - softer purple with better contrast */
+	button.mod-cta {
+		background: linear-gradient(135deg, #6b52b3, #5a439d) !important;
+		color: #e8e0ff !important; /* Slightly less bright white */
+		border: 1px solid rgba(107, 82, 179, 0.3) !important;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+		font-weight: 500 !important;
+	}
 
-button.mod-cta:hover {
-	background: linear-gradient(135deg, #7a5fc4, #6b52b3) !important;
-	color: #f0e9ff !important;
-	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) !important;
-}
+	button.mod-cta:hover {
+		background: linear-gradient(135deg, #7a5fc4, #6b52b3) !important;
+		color: #f0e9ff !important;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25) !important;
+	}
 
 	/* Tags in print - PRIVATE VAULT */
 	a.tag {
@@ -578,7 +578,7 @@ button.mod-cta:hover {
 
 	/* Print-specific adjustments for MCL Multi-Column */
 	/* MCL uses flexbox, so we preserve that and just add print optimizations */
-	
+
 	/* Ensure proper page settings - auto allows both portrait and landscape */
 	@page {
 		size: auto;
@@ -622,7 +622,7 @@ button.mod-cta:hover {
 		hyphens: none !important;
 		word-break: keep-all !important;
 	}
-	
+
 	/* Ensure all content in callouts is visible */
 	div[data-callout="multi-column"] .callout-content > * {
 		visibility: visible !important;
