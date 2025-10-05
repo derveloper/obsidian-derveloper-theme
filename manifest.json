@@ -1,7 +1,7 @@
 {
 	"name": "derveloper",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"minAppVersion": "1.0.0",
-	"author": "derveloper",
+	"author": "derveloper (based on Minimal by @kepano)",
 	"authorUrl": "https://github.com/derveloper"
 }

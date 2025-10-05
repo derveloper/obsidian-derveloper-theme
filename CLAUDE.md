@@ -32,3 +32,13 @@ The theme uses CSS custom properties to override Obsidian's default styling:
 - Removes tab header pseudo-elements
 - Applies square line caps to SVG elements
 - Adjusts menu padding and separators
+
+## Plugin Compatibilty
+
+The theme has custom styling for these obsidian plugins:
+- [Tasks](https://publish.obsidian.md/tasks/Introduction)
+ - Styling for statuses:
+  - Todo `[ ]`
+  - Done `[x]`
+  - Cancelled `[-]`
+  - In Progress `[/]`
